@@ -1,0 +1,7 @@
+{% extends 'board/base.html' %}
+{% block title %}board1{% endblock title %}
+{% block headline %}게시판{% endblock headline %}
+{% block content %}
+<p><a href="{% url 'board:board2' %}"><button type="button" class="btn btn-dark">목록</button></a></p>
+<p><a href="{% url 'board:board3' %}"><button type="button" class="btn btn-dark">등록</button></a></p>
+{%endblock%}

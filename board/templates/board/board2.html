@@ -1,0 +1,30 @@
+{% extends 'board/base.html' %}
+{% block title %}board2{% endblock title %}
+{% block headline %}{% endblock headline %}
+{% block content %}
+{% if board_list %}
+<table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">번호</th>
+        <th scope="col">제목</th>
+        <th scope="col">작성자</th>
+        <th scope="col">내용</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for info in board_list %}
+      <tr>
+        <th scope="row">{{info.id}}</th>
+        <td><p><a href="{% url 'board:detail' info.id %}">{{info.title}}</a></p></td>
+        <td>{{info.writer}}</td>
+        <td>({{info.content}})</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+    목록이 존재하지 않습니다.
+{% endif %}
+<p><a href="{% url 'board:board3' %}"><button type="button" class="btn btn-dark">글등록</button></a></p>
+{%endblock%}

@@ -1,0 +1,12 @@
+{% extends 'board/base.html' %}
+{% block title %}Update{% endblock title %}
+{% block headline %}{% endblock headline %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p><input type="text" name="title" placeholder="제목수정" value="{{info.title}}"></p>
+    <p><input type="text" name="writer" placeholder="작성자" value="{{info.writer}}"></p>
+    <p><textarea name="content" placeholder="내용수정">{{info.content}}</textarea></p>
+    <p><input type="submit" value="수정"></p>
+</form>
+{% endblock %}

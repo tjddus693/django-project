@@ -1,0 +1,10 @@
+{% extends 'board/base.html' %}
+{% block title %}Delete{% endblock title %}
+{% block headline %}{% endblock headline %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{info.id}}번 {{info.name}}학생 정보를 삭제 하시겠습니까?
+    <p><input type="submit" value="삭제"></p>
+</form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'board/base.html' %}
+{% block title %}Detail{% endblock title %}
+{% block headline %}{% endblock headline %}
+{% block content %}
+<table class="table">
+    <tr>
+        <th>글내용 등록일</th>
+        <td>{{info.regdate}}</td>
+    </tr>
+    <tr>
+        <th>조회수</th>
+        <td>{{info.readcount}}</td>
+    </tr>
+    <tr>
+        <th>작성자</th>
+        <td>{{info.writer}}</td>
+    </tr>
+    <tr>
+        <th>제목</th>
+        <td>{{info.title}}</td>
+    </tr>
+    <tr>
+        <th>내용</th>
+        <td>{{info.content}}</td>
+    </tr>
+</table>
+<p><a href="{% url 'board:update' info.id %}"><button type="button" class="btn btn-dark">수정</button></a></p>
+<p><a href="{% url 'board:delete' info.id %}"><button type="button" class="btn btn-dark">삭제</button></a></p>
+<p><a href="{% url 'board:board2' %}"><button type="button" class="btn btn-dark">목록보기</button></a></p>
+{% endblock %}

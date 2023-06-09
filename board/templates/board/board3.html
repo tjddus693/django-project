@@ -1,0 +1,12 @@
+{% extends 'board/base.html' %}
+{% block title %}board3{% endblock title %}
+{% block headline %}{% endblock headline %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p><input type="text" name="title" placeholder="제목"></p>
+    <p><input type="text" name="writer" placeholder="작성자"></p>
+    <p><input type="text" name="content" placeholder="내용"></p>
+    <p><input type="submit" value="등록"></p>
+</form>
+{%endblock%}
